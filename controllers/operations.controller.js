@@ -25,9 +25,10 @@ async function funtionsOperations (req, res, operationType, id) {
   try {
     const resultOperation = operationResult(req, operationType);
     const { valueOne, valueTwo, id_typeOperation, result } = req.body;
+    valueOne = req.body.valueOne;
     let newProject = await Operation.create({
-      valueOne: req.valueOne,
-      valueTwo: req.valueTwo,
+      valueOne,
+      valueTwo,
       id_typeOperation: id,
       result: resultOperation,
     },{
@@ -38,6 +39,7 @@ async function funtionsOperations (req, res, operationType, id) {
     }
 
   } catch (e) {
+    console.log(e)
     const error = new Error('Validation numbers failed.');
     error.statusCode = 500;
     error.data = e;

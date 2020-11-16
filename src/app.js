@@ -1,4 +1,4 @@
-/*import express, { json } from 'express';
+import express, { json } from 'express';
 import morgan from 'morgan';
 const bodyParse = require("body-parser");
 const operationRoute = require("../routes/operations.route");
@@ -20,7 +20,8 @@ app.use((error, req, res, next) => {
     const data = error.data;
     res.status(status).json({message, data });
 });
-*/
+
+/*
 import morgan from 'morgan';
 const express = require("express");
 const bodyParse = require("body-parser");
@@ -40,7 +41,7 @@ app.use((error, req, res, next) => {
     const message = error.message;
     const data = error.data;
     res.status(status).json({message, data });
-});
+});*/
 
 
 module.exports = app;

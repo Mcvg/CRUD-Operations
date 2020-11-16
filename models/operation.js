@@ -18,6 +18,8 @@ const Operation = sequelize.define('operation',{
     result:{
         type : Sequelize.FLOAT
     }
+}, {
+    timestamps: false
 });
 
-export default Operation;
+module.exports = Operation;

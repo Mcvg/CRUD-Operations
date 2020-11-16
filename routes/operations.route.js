@@ -16,7 +16,9 @@ const valuesNumerics = [
     .matches(/^[0-9.-]+$/, "i")
     .withMessage("The value two must be only numeric")
     .trim()
-    .escape()
+    .escape(),
+    body("id_typeOperation"),
+    body("result")
 ];
 
 

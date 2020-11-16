@@ -10,8 +10,10 @@ const TypeOperation = sequelize.define('typeOperation',{
     description: {
         type : Sequelize.TEXT
     }
+}, {
+    timestamps: false
 });
 
-TypeOperation.hasMany(Operation, { foreingKey: 'id_typeOperation', sourceKey:'id'});
-Operation.belongsTo(TypeOperation, { foreingKey: 'id_typeOperation', sourceKey: 'id'});
-export default TypeOperation;
+TypeOperation.hasMany(Operation, { foreingkey: 'id_typeOperation', sourceKey:'id'});
+Operation.belongsTo(TypeOperation, { foreingkey: 'id_typeOperation', targetId: 'id'});
+module.exports = TypeOperation;
